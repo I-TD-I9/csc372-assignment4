@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>ROCK PAPER SCISSORS, GO!</h1>
+  </header>
+
+  <main>
+    <section id="player-section">
+      <div class="choices" role="group" aria-label="Choose rock, paper, or scissors">
+        <figure class="choice" data-move="rock">
+          <img src="img/rock.png" alt="Rock">
+        </figure>
+        
+        <figure class="choice" data-move="paper">
+          <img src="img/paper.png" alt="Paper">
+        </figure>
+
+        <figure class="choice" data-move="scissors">
+          <img src="img/scissors.png" alt="Scissors">
+        </figure>
+      </div>
+      <h2 id="player-heading">Your Throw</h2>
+    </section>
+
+    <section id="computer-section">
+      <div class="computer-box">
+        <img id="computer-img" src="img/question-mark.png" alt="Computer is thinking">
+      </div>
+      <h2 id="computer-heading">Computer Throw</h2>
+    </section>
+
+    <section id="outcome-section">
+      <p id="result-text">Make a choice!</p>
+
+      <div class="buttons">
+        <button id="play-again" type="button" disabled>Play Again</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
