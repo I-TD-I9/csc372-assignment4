@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f7fb;
+  background-color: #a1a1a1;
   color: #222;
 }
 
@@ -8,7 +8,7 @@ header {
   text-align: center;
   padding: 16px;
   background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #0a0a0a;
 }
 
 main {
@@ -19,23 +19,50 @@ main {
 
 section {
   background-color: #ffffff;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #0f0f0f;
   border-radius: 10px;
   padding: 16px;
   margin: 14px 0;
 }
 
-#outcome-section {
+#computer-section {
+  width: 220px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 70px;
 }
 
 #result-text {
   font-size: 24px;
   font-weight: bold;
-  padding-left: 49px;
+  margin: 0 0 14px 0;
+}
+
+#outcome-result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.outcome-item {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 8px 10px;
+  width: fit-content;
+}
+
+.outcome-throws img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.outcome-label {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
 }
 
 h1 {
@@ -51,7 +78,6 @@ h2 {
 .choices {
   display: flex;
   justify-content: space-between;
-  gap: 14px;
 }
 
 .choice {
@@ -64,32 +90,29 @@ h2 {
 }
 
 .choice img {
-  width: 120px;
+  width: 140px;
   height: auto;
 }
 
-.choice:hover {
-  border-color: #cfcfe8;
-  background-color: #fafaff;
+.choice {
+  border: 4px solid #8f8f8f;
 }
 
 .choice.selected {
-  border-color: #d62828;
+  border: 4px solid #cf2e11;
 }
 
 .computer-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 16px;
 }
 
 #computer-img {
   width: 140px;
   height: auto;
-  border: 2px solid #2b6cb0;
+  border: 4px solid #3923b6;
   border-radius: 10px;
   padding: 10px;
   background-color: #ffffff;
@@ -98,12 +121,11 @@ h2 {
 .buttons {
   display: flex;
   gap: 10px;
-  margin-top: 0;
 }
 
 button {
   padding: 10px 14px;
-  border: 1px solid #cfcfe8;
+  border: 1px solid #777781;
   border-radius: 10px;
   background-color: #ffffff;
   cursor: pointer;

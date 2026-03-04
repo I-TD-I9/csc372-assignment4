@@ -53,6 +53,42 @@ function decideWinner(playerMove, computerMove) {
   return "loss";
 }
 
+function outcomeMessage(outcome) {
+  if (outcome === "win") {
+    return "You win!";
+  }
+  if (outcome === "loss") {
+    return "You lose!";
+  }
+  return "It's a tie!";
+}
+
+function outcomeResult(playerMove, computerMove, outcome) {
+  const history = document.querySelector("#outcome-result");
+  const item = document.createElement("div");
+  item.className = "outcome-item";
+
+  const throwsRow = document.createElement("div");
+  throwsRow.className = "outcome-throws";
+
+  const playerImg = document.createElement("img");
+  playerImg.src = MOVE_IMG[playerMove];
+
+  const computerImg = document.createElement("img");
+  computerImg.src = MOVE_IMG[computerMove];
+
+  const label = document.createElement("p");
+  label.className = "outcome-label";
+  label.textContent = outcomeMessage(outcome);
+
+  throwsRow.appendChild(playerImg);
+  throwsRow.appendChild(computerImg);
+  item.appendChild(throwsRow);
+  item.appendChild(label);
+
+  history.appendChild(item);
+}
+
 function startThinking() {
   let frameIndex = 0;
 
@@ -87,13 +123,9 @@ function finishRound() {
   computerSelection(computerMove);
 
   const outcome = decideWinner(playerMove, computerMove);
-  if (outcome === "win") {
-    resultText("You win!");
-  } else if (outcome === "loss") {
-    resultText("You lose!");
-  } else {
-    resultText("It's a tie!");
-  }
+  const message = outcomeMessage(outcome);
+  resultText(message);
+  outcomeResult(playerMove, computerMove, outcome);
 
   document.querySelector("#play-again").disabled = false;
   isThinking = false;
@@ -126,9 +158,9 @@ function onPlayAgain() {
     return;
   }
   clearSelection();
-  document.querySelector("#player-section").removeAttribute("data-player-move");
   document.querySelector("#computer-img").src = "img/question-mark.png";
   document.querySelector("#result-text").textContent = "Make a choice!";
+  document.querySelector("#outcome-result").removeAttribute("data-outcome-result"); // Suppose to clear results....
   document.querySelector("#play-again").disabled = true;
 }
 
